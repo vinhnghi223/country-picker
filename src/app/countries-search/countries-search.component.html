@@ -1,1 +1,11 @@
-<p class="countries-search">countries-search works!</p>
+
+<div class="countries-search">
+    
+    <input #searchBox class="countries-search-box" 
+        (input)="updateSearch(searchBox.value)"
+        placeholder="Search country here"
+    />
+
+    <app-countries-list [countries]="filteredCountries$ | async"></app-countries-list>
+    
+</div>

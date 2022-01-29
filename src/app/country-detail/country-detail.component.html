@@ -1,1 +1,11 @@
-<p class="country-detail">country-detail works!</p>
+<div *ngIf="(this.country$ | async) as country">
+    <div class="country-detail" *ngIf="country.name">
+        <p><label>Country name: </label>{{country.name}}</p>
+        <p><label>Capital: </label>{{country.capital}}</p>
+        <p><label>Region: </label>{{country.region}}</p>
+        <p><label>Population: </label>{{country.population}}</p>
+        <img src="{{country.flag}}"/>
+    </div>
+    <p *ngIf="!country.name">Country Not Found!</p>
+</div>
+
