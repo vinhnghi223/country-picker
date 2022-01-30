@@ -3,7 +3,7 @@
     
     <input #searchBox class="countries-search-box" 
         (input)="updateSearch(searchBox.value)"
-        placeholder="Search country here"
+        placeholder="🔎 What country do you want to search today?"
     />
 
     <app-countries-list [countries]="filteredCountries$ | async"></app-countries-list>

@@ -1,6 +1,6 @@
-
 <div class="cards">
-    <div class="card" *ngFor="let country of countries">
+    <div class="card"
+        *ngFor="let country of countries">
         <a routerLink="/countries/{{country.name}}">
             <div class="flipper" title="click me!"
                 [ngStyle]="{'background-image': 'url(&quot;' + country.flag + '&quot;)'}">

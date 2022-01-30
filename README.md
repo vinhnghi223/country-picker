@@ -1,27 +1,51 @@
-# CountriesPicker
+# Country Picker
+>  🔎 What country do you want to search today?
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.
+[`Demo`](https://vinhnghi223.github.io/country-picker/)
 
-## Development server
+<img src="docs/screenshot.png" />
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Last updated: 2022-02-01
+## Running the app
 
-## Code scaffolding
+Below are some useful commands:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Install dependencies
+```bash
+npm install
+```
 
-## Build
+Running the app locally
+```bash
+npm start or ng serve
+```
+Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run unit testing
+Execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+npm test
+```
 
-## Running unit tests
+Build the project
+```bash
+npm build
+```
+The build artifacts will be stored in the `dist/` directory.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Features
+* Display a list of all countries if search is not requested (search text input is empty)
 
-## Running end-to-end tests
+* Filter countries by entering full or partial country name into search text input
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+* See country detail (master-detetail UI pattern) either by:
+  - selecting country from the list 
+  - maniputing direct url on browser search bar
 
-## Further help
+* Support accessibility and responsive layout
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+* Search with debounce time, and only distinct search text is taken into account
+
+* Countries list is fetched only once during the app life cycle
+
+* Reactive programming, essential unit testing for services logic + github actions build

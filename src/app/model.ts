@@ -13,12 +13,3 @@ export const DefaultCountry = {
     population: 0,
     flag: ''
 }
-
-export interface CountriesMap {
-    [key: string]: Country
-}
-
-export interface CountriesReducerResult {
-    countryList: Country[], 
-    countryMap: CountriesMap
-}

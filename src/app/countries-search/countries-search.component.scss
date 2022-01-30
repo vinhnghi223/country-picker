@@ -1,14 +1,10 @@
 .countries-search {
-    z-index: 20;
-    background-color: #D3D3D3;
-    text-align: center;
-    border: 1px solid black;
-
+    text-align:center;
     input {
         font-family: callunaregular,Arial;
         padding: 8px 0 8px 8px;
         font-size: 1rem;
-        background: rgba(255,255,255,0.4);
+        background: white;
         border: 1px solid black;
         outline: 0;
         margin: 10px;

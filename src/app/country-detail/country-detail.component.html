@@ -1,5 +1,7 @@
-<div *ngIf="(this.country$ | async) as country">
-    <div class="country-detail" *ngIf="country.name">
+<div class="country-detail" *ngIf="(this.country$ | async) as country">
+    <button class="btn-back" routerLink="/countries">Go back</button>
+    <div *ngIf="country.name">
+        <h1>Country info</h1>
         <p><label>Country name: </label>{{country.name}}</p>
         <p><label>Capital: </label>{{country.capital}}</p>
         <p><label>Region: </label>{{country.region}}</p>
