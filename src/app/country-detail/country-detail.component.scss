@@ -1,18 +1,19 @@
 .country-detail {
     margin: 0 20px;
-    
+
     label {
         font-weight: 700;
     }
 
     img {
         width: 300px;
-        border: 1px solid black
+        border: 1px solid black;
     }
 
-    .btn-back{
+    .btn-back {
         margin: 10px 0;
         width: 100px;
         padding: 5px;
+        cursor: pointer;
     }
 }
