@@ -15,7 +15,6 @@ export class CountriesService {
   countries$: Observable<Country[]> = this.countriesSubject.asObservable();
 
   constructor(private http: HttpClient) {
-    console.log('CountriesService.constructor')
     this.getCountries() // happen only once during app cycle
   }
 
