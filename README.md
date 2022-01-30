@@ -48,4 +48,4 @@ The build artifacts will be stored in the `dist/` directory.
 
 * Countries list is fetched only once during the app life cycle
 
-* Reactive programming, essential unit testing for services logic + github actions build
+* Reactive programming, essential unit testing for services logic
