@@ -40,7 +40,7 @@ The build artifacts will be stored in the `dist/` directory.
 
 * See country detail (master-detetail UI pattern) either by:
   - selecting country from the list 
-  - maniputing direct url on browser search bar
+  - manipulating direct url on browser search bar
 
 * Support accessibility and responsive layout
 
@@ -48,4 +48,4 @@ The build artifacts will be stored in the `dist/` directory.
 
 * Requests are only called when needed
 
-* Reactive programming, essential unit testing for services logic
+* Reactive programming and essential unit testing for services logic
