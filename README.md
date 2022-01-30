@@ -46,6 +46,6 @@ The build artifacts will be stored in the `dist/` directory.
 
 * Search with debounce time, and only distinct search text is taken into account
 
-* Countries list is fetched only once during the app life cycle
+* Requests are only called when needed
 
 * Reactive programming, essential unit testing for services logic

@@ -1,6 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { of } from 'rxjs';
-import { Country, DefaultCountry } from '../model';
+import { DEFAULT_COUNTRY } from '../common/constants';
+import { Country } from '../common/model';
 
 import { CountriesService } from './countries.service';
 
@@ -8,7 +9,7 @@ describe('CountriesService', () => {
   let service: CountriesService;
   let httpClientSpy: jasmine.SpyObj<HttpClient>;
   const createMockCountry = (countryName: string) => {
-    return {  ...DefaultCountry, name: countryName}
+    return {  ...DEFAULT_COUNTRY, name: countryName}
   }
   
   beforeEach(() => {
@@ -28,7 +29,7 @@ describe('CountriesService', () => {
       httpClientSpy.get.and.returnValue(of(mockedCountries));
     })
 
-    it('should get and make all countries available via $countries', (done: DoneFn) => {
+    it('should get and make all countries available via countries$ observable', (done: DoneFn) => {
       service.getCountries()
       service.countries$.subscribe({
         next: countries => {
@@ -38,64 +39,6 @@ describe('CountriesService', () => {
         },
         error: done.fail
       })
-    }); // end of test case
-
-  });
-
-  describe('getCountry', () => {
-    
-    it('should return an expected country', (done: DoneFn) => {
-      const expectedCountries: Country[] = [{ 
-        name: 'Australia', 
-        capital: 'Canberra',
-        region: 'Oceania',
-        population: 25687041,
-        flag: '' 
-      }];
-      httpClientSpy.get.and.returnValue(of(expectedCountries));
-      
-      service.getCountry('Australia').subscribe({
-        next: country => {
-          expect(country)
-            .withContext('expected country')
-            .toEqual(expectedCountries[0]);
-          done();
-        },
-        error: done.fail
-      });
-
-    }); // end of test case
-
-    it('should return an empty default country if no country found or request fails', (done: DoneFn) => {
-
-      httpClientSpy.get.and.returnValue(of({status:404, message:'Not Found'}));
-      
-      service.getCountry('Helsinki').subscribe({
-        next: country => {
-          expect(country)
-            .toEqual(DefaultCountry);
-          done();
-        },
-        error: done.fail
-      });
-
-    }); // end of test case
-
-    it('should return DefaultCountry on error case', (done: DoneFn) => {
-      const errorResponse = new HttpErrorResponse({
-        error: { code: 404, message: 'Bad Request' }
-      });
-      httpClientSpy.get.and.returnValue(of(errorResponse));
-
-      service.getCountry('invalid').subscribe({
-        next: country => {
-          expect(country)
-            .toEqual(DefaultCountry);
-          done();
-        },
-        error: done.fail
-      });
-
     }); // end of test case
 
   });
@@ -136,23 +79,6 @@ describe('CountriesService', () => {
           error: done.fail
         });
     })
-
-    it('should return empty array on error case', (done: DoneFn) => {
-      const errorResponse = new HttpErrorResponse({
-        error: { code: 404, message: 'Bad Request' }
-      });
-      httpClientSpy.get.and.returnValue(of(errorResponse));
-
-      service.getCountry('invalid').subscribe({
-        next: country => {
-          expect(country)
-            .toEqual(DefaultCountry);
-          done();
-        },
-        error: done.fail
-      });
-
-    }); // end of test case
 
     it('should return empty array on error case', (done: DoneFn) => {
       const errorResponse = new HttpErrorResponse({

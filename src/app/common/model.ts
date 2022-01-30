@@ -5,11 +5,3 @@ export interface Country {
     population: number,
     flag: string
 }
-
-export const DefaultCountry = {
-    name: '',
-    capital: '',
-    region: '',
-    population: 0,
-    flag: ''
-}

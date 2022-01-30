@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, of, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
-import { Country } from '../model';
+import { Country } from '../common/model';
+
 import { CountriesService } from '../services/countries.service';
 
 @Component({
