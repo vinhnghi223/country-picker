@@ -11,6 +11,7 @@ export class CountriesService {
 
   private BASE_URI = 'https://restcountries.com/v2/'
 
+  // New subscribers get the last published value OR initial value immediately upon subscription.
   private countriesSubject = new BehaviorSubject<Country[]>([]);
   countries$: Observable<Country[]> = this.countriesSubject.asObservable();
 
