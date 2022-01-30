@@ -1,5 +1,5 @@
 # Country Picker
->  🔎 Find the country you want to learn more about with ease.
+>  🔎 Find the country you want with ease.
 
 [`Demo`](https://vinhnghi223.github.io/country-picker/)
 
