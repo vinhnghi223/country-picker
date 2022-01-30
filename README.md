@@ -5,7 +5,6 @@
 
 <img src="docs/screenshot.png" />
 
-Last updated: 2022-02-01
 ## Running the app
 
 Below are some useful commands:
