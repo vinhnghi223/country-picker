@@ -8,7 +8,7 @@ import { CountryService } from './country.service';
 describe('CountryService', () => {
   let service: CountryService;
   let httpClientSpy: jasmine.SpyObj<HttpClient>;
-  
+
   beforeEach(() => {
     httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
     httpClientSpy.get.and.returnValue(of([]));
@@ -16,17 +16,17 @@ describe('CountryService', () => {
   });
 
   describe('getCountry', () => {
-    
+
     it('should return an expected country', (done: DoneFn) => {
-      const expectedCountries: Country[] = [{ 
-        name: 'Australia', 
+      const expectedCountries: Country[] = [{
+        name: 'Australia',
         capital: 'Canberra',
         region: 'Oceania',
         population: 25687041,
-        flag: '' 
+        flag: ''
       }];
       httpClientSpy.get.and.returnValue(of(expectedCountries));
-      
+
       service.getCountry('Australia').subscribe({
         next: country => {
           expect(country)
@@ -41,8 +41,8 @@ describe('CountryService', () => {
 
     it('should return a DEFAULT_COUNTRY if no country found or on error', (done: DoneFn) => {
 
-      httpClientSpy.get.and.returnValue(of({status:404, message:'Not Found'}));
-      
+      httpClientSpy.get.and.returnValue(of({ status: 404, message: 'Not Found' }));
+
       service.getCountry('Helsinki').subscribe({
         next: country => {
           expect(country)

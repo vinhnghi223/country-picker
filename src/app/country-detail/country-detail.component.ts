@@ -16,7 +16,7 @@ export class CountryDetailComponent implements OnInit {
 
   country$: Observable<Country> = of(DEFAULT_COUNTRY)
 
-  constructor(private route: ActivatedRoute, private countryService: CountryService) {}
+  constructor(private route: ActivatedRoute, private countryService: CountryService) { }
 
   ngOnInit(): void {
     this.route.url

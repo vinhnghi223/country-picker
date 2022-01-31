@@ -10,7 +10,7 @@ export class CountriesListComponent implements OnInit {
 
   @Input()
   countries: Country[] = [];
-  
-  ngOnInit(): void {}
+
+  ngOnInit(): void { }
 
 }

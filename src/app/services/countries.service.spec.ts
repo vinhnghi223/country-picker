@@ -9,9 +9,9 @@ describe('CountriesService', () => {
   let service: CountriesService;
   let httpClientSpy: jasmine.SpyObj<HttpClient>;
   const createMockCountry = (countryName: string) => {
-    return {  ...DEFAULT_COUNTRY, name: countryName}
+    return { ...DEFAULT_COUNTRY, name: countryName }
   }
-  
+
   beforeEach(() => {
     httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
     httpClientSpy.get.and.returnValue(of([]));
@@ -39,6 +39,25 @@ describe('CountriesService', () => {
         },
         error: done.fail
       })
+    }); // end of test case
+
+    it('should return an empty list on error case', (done: DoneFn) => {
+      const errorResponse = new HttpErrorResponse({
+        error: { code: 404, message: 'Bad Request' }
+      });
+      httpClientSpy.get.and.returnValue(of(errorResponse));
+
+      service.getCountries()
+
+      service.countries$.subscribe({
+        next: countries => {
+          expect(countries)
+            .toEqual([]);
+          done();
+        },
+        error: done.fail
+      });
+
     }); // end of test case
 
   });
@@ -71,16 +90,16 @@ describe('CountriesService', () => {
     }) // end of test case
 
     it('should return an empty list if no match found', (done: DoneFn) => {
-        service.filterCountriesByName('mars').subscribe({
-          next: countries => {
-            expect(countries).toEqual([]);
-            done();
-          },
-          error: done.fail
-        });
+      service.filterCountriesByName('mars').subscribe({
+        next: countries => {
+          expect(countries).toEqual([]);
+          done();
+        },
+        error: done.fail
+      });
     })
 
-    it('should return empty array on error case', (done: DoneFn) => {
+    it('should return an empty list on error case', (done: DoneFn) => {
       const errorResponse = new HttpErrorResponse({
         error: { code: 404, message: 'Bad Request' }
       });

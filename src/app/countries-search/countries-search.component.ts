@@ -11,7 +11,7 @@ import { CountriesService } from '../services/countries.service';
   styleUrls: ['./countries-search.component.scss']
 })
 export class CountriesSearchComponent implements OnInit {
-  
+
   private countrySearchSubject = new Subject<string>();
   filteredCountries$: Observable<Country[]> = of([])
   constructor(private countriesService: CountriesService) { }
@@ -26,7 +26,7 @@ export class CountriesSearchComponent implements OnInit {
     })
 
   }
-  
+
   updateSearch(country: string): void {
     this.countrySearchSubject.next(country)
   }

@@ -8,13 +8,13 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 const routes: Routes = [
   { path: '', redirectTo: '/countries', pathMatch: 'full' },
   { path: 'countries', component: CountriesSearchComponent },
-  { 
-    path: 'countries/:name', 
-    component: CountryDetailComponent 
+  {
+    path: 'countries/:name',
+    component: CountryDetailComponent
   },
-  { 
-    path: '**', 
-    component: PageNotFoundComponent 
+  {
+    path: '**',
+    component: PageNotFoundComponent
   },
 ];
 

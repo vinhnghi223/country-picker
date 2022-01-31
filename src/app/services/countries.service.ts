@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import { BASE_URI, DEFAULT_COUNTRY } from '../common/constants';
+import { BASE_URI } from '../common/constants';
 import { Country } from '../common/model';
 import { transformCountry } from '../common/utils';
 

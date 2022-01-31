@@ -16,14 +16,14 @@ npm install
 
 Running the app locally
 ```bash
-npm start or ng serve
+npm start OR ng serve
 ```
 Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 Run unit testing
 Execute the unit tests via [Karma](https://karma-runner.github.io).
 ```bash
-npm test
+npm test OR ng test
 ```
 
 Build the project
