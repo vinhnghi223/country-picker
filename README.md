@@ -45,6 +45,6 @@ The build artifacts will be stored in the `dist/` directory.
 
 * Search with debounce time, and only distinct search text is taken into account
 
-* Requests are only called when needed
+* Requests are only called when needed (caching)
 
 * Reactive programming and essential unit testing for services logic
